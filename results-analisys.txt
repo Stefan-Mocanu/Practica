@@ -1,0 +1,3 @@
+ChatGPT - it correctly graded the paper, but failed to add the points together. It said that part 2 has 2.5 points instead of 1.5 points
+Deepseek - flawless in this context
+Gemini - It wrongly graded exercise 4

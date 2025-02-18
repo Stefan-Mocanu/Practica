@@ -1,0 +1,186 @@
+{
+    "test-language": "Romanian",
+    "test":[
+    {
+        "part":1,
+        "graph-type": ["undirected", "unweighted"],
+        "graph-representation": "adjacency list",
+        "graph": {
+            "1": ["4","7"],
+            "2": ["0","3"],
+            "3": ["2","6"],
+            "4": ["1","5","0"],
+            "5": ["4","0"],
+            "6": ["3","0"],
+            "7": ["1"],
+            "0": ["2","4","5","6"]
+        },
+        "exercises": [
+            {
+                "name":1,
+                "points": 0.5,
+                "requirement": "Care sunt nodurile critice din graf? Să se definească noțiunea de nod critic.",
+                "correct answer": "Nodurile critice sunt 1,0,4. Un nod critic este un nod care, prin eliminarea lui, numărul de componente conexe ale grafului crește.",
+                "student answer": "Un nod critic este un nod care, dacă ar fi scos, ar determina creșterea de componente conexe din graf. În graful din exercițiu: 1,0,4."
+            },{
+                "name":2,
+                "points": 0.5,
+                "requirement": "Exemplificați cu explicații cum funcționează parcurgerea în adâncime pornind din nodul 4, ilustrând și arborele asociat.",
+                "correct answer": ["Graful DF asociat grafului arată astfel:", {
+                    "4":{
+                        "1stChild": {
+                            "value": 0,
+                            "1stChild": {
+                                "value": 2,
+                                "1stChild":{"value": 3,
+                                        "1stChild": {"value":6}
+                                }
+                            },
+                            "2ndChild":{
+                                "value": 5
+                            }
+
+                        },
+                        "2ndChild":{
+                            "value":1,
+                            "1stChild":{"value":7}
+                        }
+                    }
+                }],
+                "student answer": ["Iterez prin vecinii lui 4 și pentru fiecare nod nevizitat dintre aceștia pornesc un nou DF din el(varinta recursivă) sau îl introduc într-o stivă. Graful DF asociat va arăta astfel: ",{
+                    "4":{
+                        "1stChild": {
+                            "value": 0,
+                            "1stChild": {
+                                "value": 2,
+                                "1stChild":{"value": 3,
+                                        "1stChild": {"value":6}
+                                }
+                            },
+                            "2ndChild":{
+                                "value": 5
+                            }
+
+                        },
+                        "2ndChild":{
+                            "value":1,
+                            "1stChild":{"value":7}
+                        }
+                    }
+                }]
+            },{
+                "name":3,
+                "points": 0.75,
+                "requirement": "Indicați un subgraf bipartit(indus) al acestui graf cu număr maxim de noduri și indicați o bipartiție a acestuia, explicând și cum ați construit-o.",
+                "correct answer": "Se va elimina doar un nod din mulțimea {4, 5, 0}, deoarece fac parte dintr-un ciclu de lungime impară. Apoi se va propune o bicolorare validă.",
+                "student answer": "Elimin nodul 5(deoarece face parte dintr-un ciclu impar). O bipartiție este formată din mulțimile S1={0,1,3} și S2={2,4,6,7}. Am obținut-o plecând cu vf 1 în mulțimea S1 și, la modul general, fiecare vârf adiacent cu un vârf x l-am pus în mulțimea în care nu este x(dacă nu era deja în acea mulțime, iar dacă era în aceeași mulțime cu x, subgraful nu era bipartit)"
+            },{
+                "name":4,
+                "points": 0.75,
+                "requirement": "Puneți ponderi pe muchii astfel încât graful să aibă exact 2 arbori parțiali de cost minim de cost 50 și indicați acești arbori.",
+                "correct answer": "Orice ponderi puse pe muchii care respectă cerința. Suma costurilor arborilor propusi trebuie să fie 50.",
+                "student answer": {
+                    "ponderi":[
+                        {
+                            "muchia": "1 7",
+                            "cost": 1
+                        },{
+                            "muchia": "1 4",
+                            "cost": 1
+                        },{
+                            "muchia": "4 5",
+                            "cost": 44
+                        },{
+                            "muchia": "5 0",
+                            "cost": 44
+                        },{
+                            "muchia": "4 0",
+                            "cost": 1
+                        },{
+                            "muchia": "0 2",
+                            "cost": 1
+                        },{
+                            "muchia": "0 6",
+                            "cost": 1
+                        },{
+                            "muchia": "2 3",
+                            "cost": 1
+                        },{
+                            "muchia": "6 3",
+                            "cost": 100
+                        }
+                    ],
+                "arbore1":["4 0", "0 5","0 6","0 2","2 3","4 1","1 7"],
+                "arbore2":["4 0", "4 5","0 6","0 2","2 3","4 1","1 7"]
+                }
+            }
+        ]
+    },{
+        "part":2,
+        "graph-type": ["directed", "weighted"],
+        "graph-representation":"adjacency list with weights",
+        "graph":{
+            "0":{
+                "2": {"weight":1}
+            },"1":{
+                "5": {"weight":1},
+                "7": {"weight":2}
+            }, "2":{
+                "1": {"weight":4},
+                "3": {"weight":5}
+            }, "4":{
+                "2": {"weight":6}
+            }, "5":{
+                "0": {"weight":7}
+            }, "6":{
+                "0": {"weight":3},
+                "3": {"weight":9}
+            }
+        },
+        "exercises":[
+            {
+                "name":5,
+                "points": 0.5,
+                "requirement": "Exemplificați pașii algoritumui Bellman Ford(cu explicații) pornind din vârful 6. Explicați amănunțit prima iterație a algoritmului și apoi rezultatul după fiecare iterație în parte.",
+                "correct answer": "Algoritmul să fie rulat corect respectând cerința. Rezultatul final trebuie să fie {3,8,4,9,inf,9,0,10}",
+                "student answer": "Consider vectorul dist[8] inițializat cu +inf peste tot. Fie w(a,b) costul asociat muchiei a-b. dist[i]=distanta de la i la sursă. Încep din 6, deci dist[6]=0. Prima iterație: Muchia(6,0): dist[6](0) + w[6,0](3) < dist[0](+inf) (True) => dist[0]=3; Muchia(6,3): 0 + 9 < +inf (True) => dist[3]=9; Muchia(0,2): 3 + 1 < +inf (True) => dist[2]=4; Muchia(2,3): 4 + 5 < 9 (False) => continue; Muchia(2,1): 4 + 4 < +inf => dist[1]=8; Muchia(1,7): 8 +2 < inf => dist[7]=10; Muchia(1,5): 8+1 < inf => dist[5]=9; Muchia(5,0): 9+7<3 => continue: Muchia(4,2): inf+6<4 => continue. După iterația 1 dist={3,8,4,9,inf,9,0,10}. Am luat muchiile în ordinea optimă la iterația 1, deci dist nu se va schimba pentru că nu există cicluri negative."
+            },{
+                "name":6,
+                "points": 0.5,
+                "requirement": "Exemplificați pașii algoritumului lui Prim pentru obținea aborelui parțial de cost minim(APM) din nodul 2(cu explicații) pentru graful neorientat asociat(obținut ignorând orientarea arcelor).",
+                "correct answer": ["Arborele cu muchiile:",["0 2","0 6","2 1","1 5","1 7","2 3","2 4"]],
+                "student answer": ["La fiecare pas voi alege muchia cu cost minim ce are o extremitate în APM(cel ce se va construi) și una în afară, până când obțin 7 sau (n-1) muchii.",{
+                    "pas1":{
+                        "APM": [2],
+                        "muchia selectată": "0 2"
+                    },"pas2":{
+                        "APM": [2,0],
+                        "muchia selectată": "0 6"
+                    },"pas3":{
+                        "APM": [2,0,6],
+                        "muchia selectată": "2 1"
+                    },"pas4":{
+                        "APM": [2,0,6,1],
+                        "muchia selectată": "1 5"
+                    },"pas5":{
+                        "APM": [2,0,6,1,5],
+                        "muchia selectată": "1 7"
+                    }, "pas6": {
+                        "APM": [2,0,6,1,5,7],
+                        "muchia selectată": "2 3"
+                    },"pas7":{
+                        "APM": [2,0,6,1,5,7,3],
+                        "muchia selectată": "2 4"
+                    },"APM Final": [2,0,6,1,5,7,3,4]
+                },{"Arborele parțial de cost minim este format din muchiile": ["0 2","0 6","2 1","1 5","1 7","2 3","2 4"]}]
+            },{
+                "name":7,
+                "points": 0.5,
+                "requirement": "Există un drum eulerian în graf? Dacă da, indicați un astfel de drum. Dacă nu, adăugați un număr minim de arce astfel încât graful obținut să aibă un drum eulerian și indicați un asfel de drum.",
+                "correct answer": "Nu există, deci trebuie introduse 3 arce",
+                "student answer": "Nu există un drum eulerian, deci trebuie să adaug muchiile 3-6, 3-4 și 0-6. Drumul eulerian obtinut este: 1, 5, 0, 6, 3, 6, 0, 2, 3, 4, 2, 1, 7"
+            }
+        ]
+    }
+]
+}
