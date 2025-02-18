@@ -1,4 +1,4 @@
-### ChatGPT
+# ChatGPT
 
 I will now evaluate the student's test based on the given answers for each exercise, providing feedback and assigning grades accordingly.
 
@@ -61,8 +61,8 @@ I will now evaluate the student's test based on the given answers for each exerc
 
 **Overall Grade:** **5/5**
 
-
-### Deepseek
+===
+# Deepseek
 
 Here is the grading of the student's test based on the provided answers and correct solutions:
 
@@ -128,8 +128,8 @@ Here is the grading of the student's test based on the provided answers and corr
 
 The student performed exceptionally well, answering all questions correctly. Great job!
 
-
-### Gemini
+===
+# Gemini
 Here's the grading of the student's test:
 
 **Part 1**
