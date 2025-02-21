@@ -1,4 +1,4 @@
-#ChatCPT
+# ChatCPT
 Here’s a breakdown of the grading for your student’s work based on correctness, completeness, and clarity. I’ll assign a score for each question and explain any deductions.
 
 ---
@@ -74,7 +74,7 @@ Here’s a breakdown of the grading for your student’s work based on correctne
 
 Your student did a great job overall, with only a few minor errors in the graph theory-based questions!
 
-#Deepseek
+# Deepseek
 ### Grading the Student's Answers
 
 ---
@@ -199,7 +199,7 @@ Your student did a great job overall, with only a few minor errors in the graph 
 - In **Exercise 11**, the student should provide a justification for why the graph is planar.
 - In **Exercise 12**, the student should provide more detail about the graph construction and BFS implementation.
 
-#Gemini
+# Gemini
 ## Grilă de corectare a testului
 
 ### Partea 1
@@ -240,7 +240,7 @@ Your student did a great job overall, with only a few minor errors in the graph 
 *   La Exercițiul 9b, studentul a făcut o mică eroare în calculul numărului de muchii, dar a înțeles conceptul de bază.
 *   La Exercițiul 12, studentul a oferit un algoritm corect și eficient, dar nu a discutat explicit complexitatea algoritmului. Discutarea complexității ar fi putut aduce puncte suplimentare.
 
-#Claude
+# Claude
 I'll help you grade this test, analyzing each answer against the provided correct answers and providing a detailed evaluation.
 
 Let me go through each exercise:
