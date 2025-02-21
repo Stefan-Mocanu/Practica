@@ -1,4 +1,4 @@
-# ChatCPT
+# ChatGPT
 Here’s a breakdown of the grading for your student’s work based on correctness, completeness, and clarity. I’ll assign a score for each question and explain any deductions.
 
 ---
