@@ -170,8 +170,9 @@
                         "muchia selectată": "2 3"
                     },"pas7":{
                         "APM": [2,0,6,1,5,7,3],
-                        "muchia selectată": "2 4"
-                    },"APM Final": [2,0,6,1,5,7,3,4]
+                        "muchia selectată": "2 4",
+                        "APM-after-this-step": [2,0,6,1,5,7,3,4]
+                    }
                 },{"Arborele parțial de cost minim este format din muchiile": ["0 2","0 6","2 1","1 5","1 7","2 3","2 4"]}]
             },{
                 "name":7,
@@ -179,6 +180,106 @@
                 "requirement": "Există un drum eulerian în graf? Dacă da, indicați un astfel de drum. Dacă nu, adăugați un număr minim de arce astfel încât graful obținut să aibă un drum eulerian și indicați un asfel de drum.",
                 "correct answer": "Nu există, deci trebuie introduse 3 arce",
                 "student answer": "Nu există un drum eulerian, deci trebuie să adaug muchiile 3-6, 3-4 și 0-6. Drumul eulerian obtinut este: 1, 5, 0, 6, 3, 6, 0, 2, 3, 4, 2, 1, 7"
+            }
+        ]
+    },{
+        "part":3,
+        "exercises":[
+            {
+                "name":8,
+                "points":1,
+                "graph-type":["directed","flow-network"],
+                "graph":{
+                    "source":"6",
+                    "destination":"7",
+                    "structure":{
+                        "1":{
+                            "2":{"flow":5,"maximum-flow":10},
+                            "3":{"flow":0,"maximum-flow":4}
+                        },
+                        "2":{
+                            "4":{"flow":5,"maximum-flow":5}
+                        },
+                        "3":{
+                            "7":{"flow":0,"maximum-flow":8}
+                        },
+                        "4":{
+                            "5":{"flow":6,"maximum-flow":7}
+                        },
+                        "5":{
+                            "3":{"flow":0,"maximum-flow":2},
+                            "7":{"flow":6,"maximum-flow":6}
+                        },
+                        "6":{
+                            "1":{"flow":5,"maximum-flow":5},
+                            "4":{"flow":1,"maximum-flow":10}
+                        }
+                    }
+                },"requirement": "Ilustrati pașii algoritmului Ford-Fulkerson pentru această rețea pornind de la fluxul indicat și alegând la fiecare pas un s-t lanț(lanț sursă destinație) f-nesaturat de lungime minimă(algoritmul Edmonds-Karp). Indicați o tăietură(s-t tăietură) minimă în rețea(se vor indica vârfurile din bipartiție, arcele directe, arcele inverse), și determinați capacitatea acestei tăieturi. Justificați răspunsurile.",
+                "correct answer": "Studentul trebuie să ajungă corect la concluzia că valoarea fluxului maxim și a tăieturii minime este 11 și să indice corect una din tăieturile minime.",
+                "student answer": "Aleg lanț nesaturat de lungime minimă între 6-7: 6-4-5-3-7 Capacitatea reziduală=min(10-1,7-6,2-0,8-0)=1. Toate arcele sunt directe deci adaug 1 la fluxul de pe fiecare arc. Aleg un nou lanț 6-7 nesaturat minim: 6,4,2,1,3,7 Capacitatea reziduală=min(8,5,5,4,7)=4. Pe arcele directe adaug 4, iar pe cele inverse scad 4. Observ că nu mai există lanțuri 6-7 nesaturate. Valoarea fluxului maxim este 11(suma fluxului care intră în nodul 7). Tăietura minimă: Arce directe: (1,3) și (4,5). Capacitatea tăietură=flux maxim=flux(1,3)+flux(4,5)=11. Nu există arce inverse în această tăietură. Vârfurile din bipartiție: S={6,1,2,4}, T={3,5,7}"
+            },{
+                "name":9,
+                "points-for-a":0.75,
+                "points-for-b":0.75,
+                "exercise-boundaries": "Fie G un graf neorientat fără noduri izolate, având p componente conexe, fiecare componentă conexă fiind un graf complet.",
+                "requirement-a": "Știind că componentele conexe ale lui G au număr impar de noduri, care este numărul minim de muchii care trebuie adăugate la G pentru ca graful obținut să fie eulerian? Justificați răspunsul.",
+                "requirement-b": "Știind că o componentă conexă a lui G are k<p noduri cu k număr par, iar toate celelalte componente conexe au număr impar de noduri, care este numărul minim de muchii care trebuie adăugate la G pentru ca graful obținut să fie eulerian? Justificați răspunsul.",
+                "correct answer for a": "Sunt necesare p muchii pentru a uni componentele conexe între ele.",
+                "correct answer for b": "În total sunt necesare p+k/2 muchii pentru a uni componentele conexe între ele și pentru a crește gradele nodurilor din componenta cu k noduri cu 1.",
+                "student answer for a": "Fiecare componentă conexă este un graf complet cu număr impar de noduri, deci fiecare componentă conexă este subgraf eulerian, deci numărul minim de muchii ce trebuie adăugate pentru ca tot graful să fie eulerian este p. Dintre acestea p-1 sunt pentru a uni componentele conexe și 1 pentru a „se putea intoarce” formând un ciclu.",
+                "student answer for b": "În componenta cu K noduri fiecare nod are grad impar, deci trebuie k/2 muchii pentru a ajunge ca toate nodurile să aibă grad par. Vom lega câte 2 noduri din componeta K la un nod din altă componentă, deci vom rămâne cu p-k/4 componente conexe, așa că mai adăugăm încă p-k/4 muchii. În total p+k/4 muchii."
+            },{
+                "name": 10,
+                "points":0.5,
+                "requirement":"Descrieți pe scurt algoritmul de determinare a distanței de editare între două cuvinte și explicați relațiile de recurență pentru calculul acestei distanțe. Ilustrați algoritmul pentru cuvintele „protest” și „profesor”, scriind matricea cu valorile subproblemelor și explicând cum au fost acestea calculate.",
+                "correct answer": ["Descrierea corectă a algoritmului bazat pe programare dinamică. De asemenea răspunsul final este 3 care poate fi găsit în ultimul element de pe ultima linie a matricei calculate cu programarea dinamică: ", 
+                [
+                    [0,1,2,3,4,5,6,7,8],
+                    [1,0,1,2,3,4,5,6,7],
+                    [2,1,0,1,2,3,4,5,6],
+                    [3,2,1,0,1,2,3,4,5],
+                    [4,3,2,1,1,2,3,4,5],
+                    [5,4,3,2,1,1,2,3,4],
+                    [6,5,4,3,2,1,1,2,3],
+                    [7,6,5,4,3,2,2,3,3]
+                ]],
+                "student answer": ["Folosind programarea dinamică se face matricea ev astfel: ev[i][j]={max(i,j) dacă min(i,j)=0 sau min(ev[i-1][j]+1,ev[j-1][i]+1,ev[i-1][j-1]+(1, dacă a[i]!=b[j], altfel 0) dacă min(i,j)!=0. Unde a și b sunt cuvintele pe protest și profesor. Matricea calculată arată astfel și denotă că 3 este răspunsul corect, fiind ultimul element de pe ultima linie:",[
+                    [0,1,2,3,4,5,6,7,8],
+                    [1,0,1,2,3,4,5,6,7],
+                    [2,1,0,1,2,3,4,5,6],
+                    [3,2,1,0,1,2,3,4,5],
+                    [4,3,2,1,1,2,3,4,5],
+                    [5,4,3,2,1,1,2,3,4],
+                    [6,5,4,3,2,1,1,2,3],
+                    [7,6,5,4,3,2,2,3,3]
+                ]]
+            },{
+                "name":11,
+                "points":0.5,
+                "graph-type": ["undirected","unweighted"],
+                "graph":{
+                    "1":[4,5,7,8],
+                    "3":[0,6,7,8],
+                    "4":[1,8],
+                    "5":[0,1,6,7],
+                    "6":[0,3,5,8],
+                    "7":[1,3,5,8],
+                    "8":[0,1,3,6,7],
+                    "0":[3,5,6,8]
+                },
+                "requirement": "Descrieți algoritmul de 6-colorare a vârfurilor unui graf neorientat conex planar și exemplificați acest algoritm pentru graful alăturat. Motivați de ce graful este planar.",
+                "student answer": {
+                    "algoritm": "repetă până când numărul de vârfuri din graful G < 6: {găsesc un nod x din G cu gradul < 6; adaug x intr-o stivă st; elimin x din G} colorez toate vârfurile rămase în G cu culori distincte; căt timp st nu este goala: {x primește elementul din varful stivei și dau pop; colorez x cu o culoare diferită de cea a vecinilor săi}",
+                    "exemplificare algoritm": "Elimin 1, apoi 4, apoi 0 deci stiva= {1,4,0}. Consider culorile {a,b,c,d,e,f}. Colorez vârfurile rămase: (3,a),(5,b),(6,c),(7,d),(8,e). Colorez vârfurile din stivă: (0,d),(4,d),(1,a)"
+                }
+            },{
+                "name":12,
+                "points":1.5,
+                "requirement": "Ninel e în Israel și vrea să ia autobuzul dintr-ul loc în oraș în altul. Cum autobuzul este foarte scump în Israel, și cum Ninel trebuie să ia un bilet de fiecare dată când schimbă autobuzul în Israel, el vă roagă să găsiți un drum din stația 1 în stația n cu cât mai puține schimbări.",
+                "input":"Pe prima linie este N, stația unde Ninel vrea să ajungă, și M, numărul de linii de autobuz. Pe fiecare linie din următoarele m este o listă de stații de autobuz reprezentând stațiile prin care trece autobuzul 1,2,..respectiv M. Evident vor exista stații în care merg mai multe autobuze, acolo Ninel poate schimba autobuzul. Numărul total de stații(cu tot cu repetiții) este S.",
+                "correct answer":"Pentru un algoritm corect 0.75. Pentru discuția complexității și complexitate optimă 0.75.",
+                "student answer": "Fiecare dintre cele m linii ale fișierului conține un lanț. Din aceste lanțuri construiesc graful în complexitate O(S). Apoi voi face un bfs în acest graf. Pentru fiecare nod voi reține o pereche(nod, dist) care reprezintă numărul stației și distanța de la 1 la ea. Astfel voi inițializa o coadă Q=[(1,0)]. Pentru fiecare vecin v nevizitat al nodului din capul cozii îl voi adăuga în coadă sub formă de pereche (v,dist+1). Când v==n returnez dist+1. Complexitatea este cea dată de BFS: O(n+m)"
             }
         ]
     }
