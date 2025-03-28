@@ -1,0 +1,19 @@
+Subiect bacalaureat iunie 2022
+
+La subiectul 1, am gresit raspunsul de la exercitiile 2 si 3, unde am pus raspunsul b (-8).
+
+La subiectul 2, am gresit la: 
+- exercitiul 1b, unde am pus doua numere prime din afara intervalului cerut (-2), 
+- exercitiul 1c, unde am gresit declararea variabilelor (am uitat sa le declar), citirea variabilelor (am pus << in loc de >>, afisarea datelor (am pus >> in loc de <<), instructiunea de decizie (am pus i=2 in loc de i==2), am folosit doar o instructiune repetitiva conform cerintei (for int i = 0, unde i ar fi trebuit sa fie declarata ca variabila si initalizata cu 2) si corectitudinea globala a programului (-8),
+- exercitiul 1d, unde am gresit la corectitudinea globala a algoritmului (am schimbat i=i+1 si i=i+2 din final intre ele si am uitat un ;) (-1),
+- exercitiul 3, unde am identificat prenumele in loc de numele persoanei, se adauga un spatiu in id neconform cerintei, nu se adauga 2022 la final, am uitat un punct si virgula, iar iterarea prin literele cuvantului incepe de la 1 pana la numarul de litere al cuvantului (care este arguably corect din punct de vedere al cerintei) (-6).
+
+La subiectul 3, am gresit la:
+- exercitiul 1, unde am declarat gresit antetul functiei (in loc de void secventa(int& n) am pus int secventa(n)), furnizarea rezultatului prin parametrul indicat (am dat return res), declararea variabilelor locale (nu am facut-o), determinare a valorii cerute (nu se tine cont de cifrele nule de la finalul numarului si ordinea cifrelor este incorecta, rezultatul fiind rasturnat) (-7)
+- exercitiul 2, unde am citit gresit variabilele (cin<<, am inlocuit liniile si coloanele intre ele), am facut overflow in cautarea parcelelor de inisipat, am adaugat si afisat numarul de parcele gasite cu proprietatea din problema in loc de cantitatea de nisip totala adaugata care era ceruta, am comis multiple greseli de sintaxa (& in loc de &&, punct si virgule uitate, brackets uitate, int main fara return, fara include-uri si fara namespace) (-9)
+- exercitiul 3a, unde, pe langa descrierea total vaga in exprimare, am descris un algoritm care ar rezolva problema in O(n^2), nicidecum optim (-2)
+- exercitiul 3b, greseli de sintaxa similare cu cele de la exercitiul 2, nu am citit datele de intrare din fisier, lista este citita gresit, intrucat indexul (n) in while loop-ul de citire nu este incrementat, parcurgerea vectorului se face in mod incorect incepand cu 1, in for loop-ul al doilea se verifica daca indexii sunt aceiasi si se da break in loc de continue, se afiseaza numarul de elemente care NU sunt distincte in loc de cele distincte (-7)
+
+Nota estimativa: 5
+
+

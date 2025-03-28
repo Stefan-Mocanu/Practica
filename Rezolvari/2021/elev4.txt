@@ -1,0 +1,135 @@
+SUBIECTUL I
+1. a)
+2. d)
+3. d)
+4. a)
+5. c)
+
+SUBIECTUL II
+1.
+	a)
+		Pentru x = 8 si y = 5 se va afisa: 1111121121
+	b)
+		6 si 15
+	c)
+cin>>x>>y;
+if(x > y)
+{
+	int z = x;
+	x = y;
+	y = z;
+}
+nr = 1;
+for(i = y; i >= x; i--)
+{
+	cout<<1;
+	if(nr >= x)
+		cout<<2;
+	nr = nr * 3;
+	cout<<1;
+}	
+
+	d)
+citeste x, y
+	(numere naturale nenule)
+daca x > y atunci x  y
+nr  1
+i  y
+cat timp i >= x executa
+	scrie 1
+	daca nr >= x atunci
+		scrie 2
+	nr  nr * 3
+	scrie 1 
+	i  i - 1
+
+2.
+	(ciocarlie, scatiu) si (mierla, scatiu)
+3.
+	fs.a = 2020 * f.a – 2021 * f.b;
+	fs.b = 2021 * f.b;
+	
+SUBIECTUL III
+1.
+void divPrim(int n, int& s)
+{
+	s = 0;
+	for(int p = 2; p <= n; p++)
+	{
+		if(n % p == 0)
+		{
+			int nr = 0;
+			while(n % p == 0)
+			{
+				nr++;
+				n /= p;
+			}
+			if(nr % 2 != 0)
+				s += p;
+		}
+	}
+}
+
+2.
+#include <iostream>
+#include <cstring>
+using namespace std;
+int n, k;
+char s[11];
+char v[21][11];
+int main()
+{
+	len = 0;
+	cin>>n>>k;
+	for(int i = 1; i <= n; i++)
+	{
+		cin>>s;
+		char c = s[strlen(s) – 1];
+		if(c == ‘a’ || c == ‘e’ || c == ‘i’ || c == ‘o’ || c == ‘u’)
+			strcpy(v[++len], s);
+	}
+	if(len < k)
+		cout<<”nu exista”;
+	else
+	{
+		for(int i = 1; i <= k; i++)
+			cout<<v[i]<<’\n’;
+	}
+	return 0;
+}
+
+3.
+a)
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin(“bac.txt”);
+int x, ant, crt;
+int sol1, sol2;
+int main()
+{
+	sol1 = -1;
+	sol2 = -1;
+	fin>>x;
+	fin>>ant;
+	while(fin>>crt)
+	{
+		if(crt % 1000 == x && ant % 1000 == x)
+		{
+			sol1 = ant;
+			sol2 = crt; 
+		}
+		int t = ant;
+		ant = crt;
+		crt = t;
+	}
+	if(sol1 == -1)
+		cout<<”nu exista”;
+	else
+		cout<<sol1<<” “<<sol2;
+	return 0;
+}
+
+b)
+	Explicatie cod: Dorim sa analizam pozitii consecutive din sir, sa vedem daca verifica conditiile din enunt. Pentru asta avem nevoie de doua variabile (ant – valoarea preedenta in sir si crt – valoarea citita in momentul actual). Daca ambele il au pe x ca sufix, atunci vom actualiza valorile variabilelor sol1 si sol2. Acestea sunt initializate cu -1 pentru a testa corect cazul “nu exista” (-1 nu poate aparea in sir, deci nu avem probleme).
+	Nu folosim vector, ci doar parcurgem liniar elementele din fisierul de intare, ceea ce justifica eficienta programului.

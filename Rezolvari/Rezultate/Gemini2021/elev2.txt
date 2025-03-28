@@ -1,0 +1,17 @@
+Iată punctajul pentru rezolvarea elevului:
+
+*   **1.1** Gresit (0 puncte)
+*   **1.2** Gresit (0 puncte)
+*   **1.3** Corect (4 puncte)
+*   **1.4** Corect (4 puncte)
+*   **1.5** Corect (4 puncte)
+*   **2.1.a** 0 puncte (nu generează șirul corect)
+*   **2.1.b** 6 puncte (identifică corect cele două numere)
+*   **2.1.c** 5 puncte (Codul are erori de logică și nu generează șirul corect. Nu respectă formatul de afișare și condițiile impuse. Folosirea `swap` e corectă, dar nu e implementată corect iterarea inversă și generarea șirului cu 1 și 2)
+*   **2.1.d** 3 puncte (Pseudocodul are o structură corectă, dar nu generează șirul corect și nu respectă condițiile impuse)
+*   **2.2** 6 puncte
+*   **2.3** 6 puncte
+*   **3.1** 0 puncte (Calculează suma divizorilor primi cu putere pară, nu produsul celor cu putere impară. Bucla `d += 1` este ineficientă; ar trebui să incrementeze `d` doar cu 1 dacă `d` este 2, altfel cu 2.)
+*   **3.2** 5 puncte (Parțial corect. Corectă citirea și filtrarea cuvintelor. Afișarea este incorectă; ar trebui de la `0` la `k-1`, nu de la `1` la `k`. Probleme cu `strcpy` și `cin.getline`. Nu testează existența cuvintelor suficiente.)
+*   **3.3.a** 8 puncte (Solutia functioneaza, dar poate fi optimizata, desi algoritmul prezentat se incadreaza in barem)
+*   **3.3.b** 2 puncte

@@ -1,0 +1,138 @@
+Bacalaureat informatica C/C++, sesiunea iunie-iulie 2020
+-numar greseli: [2]
+--GRESEALA SIII EX2: se citeste un singur cuvant, in loc de o un sir de cuvinte separate prin spatii
+--GRESEALA SIII EX3: la validarea finala, sunt inversate rezultatele DA si NU
+
+Subiectul I:
+1. d
+2. b
+3. c
+4. c
+5. a
+
+Subiectul II:
+1.
+    a) 1 1 1 0 0
+    b) 102468, 986420
+    c)
+    #include <iostream>
+    using namespace std;
+    int a, b, c, x;
+    int main () {
+        cin >> a;
+        c = 0;
+        while (c <= 9) {
+            b = a;
+            x = 0;
+            while (b != 0 && x != 1) {
+                if (b % 10 == c) {
+                    x = 1;
+                }
+                b = b / 10;
+            }
+            cout << x << ' ';
+            c = c + 2;
+        }
+        return 0;
+    }
+    d)
+    cit. a
+    c<-0
+    repeta
+        b<-a; x<-0
+        repeta
+            daca b%10=c atunci
+                x=1
+            b<-b/10
+        cat timp b!=0 si x!=1
+        scrie x,' '
+        c<-c+2
+    pana cand c>9
+2.
+    struct calculator {
+        char monitor;
+        struct {
+            int interna, externa;
+        } memorie;
+    } c;
+
+3.
+    if (i > 4 && j > 8 - i && j < i) {
+        a[i][j] = '<';
+    } else {
+        a[i][j] = '>';
+    }
+
+Subiectul III:
+1.
+    int suma (int a, int b) {
+        int s = 1;
+        for (int i = 2; i <= a && i <= b; i++) {
+            if (a % i == 0 && b % i == 0) {
+                s = s + i;
+            }
+        }
+        return s;
+    }
+2.
+#include <iostream>
+#include <cstring>
+using namespace std;
+char s[101], t[101], *p, word[101];
+bool exista;
+int main() {
+    cin >> s;
+    p = strtok(s, " ");
+    while (p) {
+        strcpy(word, p);
+        if (strlen(word) >= 3) {
+            exista = true;
+            char f = word[0];
+            strcpy(word, word + 1);
+            word[strlen(word)] = f;
+        }
+        strcat(t, word);
+        strcat(t, " ");
+        p = strtok(NULL, " ");
+    }
+    strcpy(s, t);
+    if (exista) {
+        cout << s;
+    } else {
+        cout << "nu exista";
+    }
+    return 0;
+}
+3.
+a)
+    Pentru a determina daca un sir de numere naturale poate fi rearanjat in asa fel incat sa devina palindromic, este obligatoriu ca acesta sa respecte urmatoarele reguli: Daca sirul contine un numar par de elemente, atunci fiecare numar citit trebuie sa aiba un numar par de aparitii. Daca sirul contine un numar impar de elemente, atunci toate numerele citite vor avea un numar par de aparitii, cu exceptia unuia. Algoritmul propus verifica regulile anterior mentionate cu ajutorul unui vector de aparitii de dimensiune 1001. Pentru a imbunatati timpul de executare al programului, vom actualiza aparitiile numerelor chiar in timpul citirii, iar determinarea numarului elementelor cu numar par, respectiv impar de aparitii se va realiza cu ajutorul unei structuri repetitive pentru toate numerele intre 1 si 10^3.
+b)
+    #include <fstream>
+    using namespace std;
+    ifstream fin("bac.in");
+    ofstream fout("bac.out");
+    int v[1001], x, k, par, impar;
+    int main() {
+        while (fin >> x) {
+            v[x]++;
+            k++;
+        }
+        for (int i = 1; i <= 1000; i++) {
+            par = par + (v[i] % 2 == 0);
+            impar = impar + (v[i] % 2 == 1);
+        }
+        if (k % 2 == 0) {
+            if (impar == 0) {
+                fout << "NU";
+            } else {
+                fout << "DA";
+            }
+        } else {
+            if (impar == 1) {
+                fout << "NU";
+            } else {
+                fout << "DA";
+            }
+        }
+        return 0;
+    }

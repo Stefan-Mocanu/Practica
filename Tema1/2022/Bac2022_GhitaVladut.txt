@@ -1,0 +1,158 @@
+Introducere si Greseli:
+- Ghita Vladut grupa 151
+- Rezolvare bac 2022, matematica-informatica, sesiunea din Iunie 
+- Random number generator: 4
+- Nota finala 6
+- Greseli:
+    - Subiectul 1: Grila 2 gresita                                | -4p
+                   Grila 5 gresita                                | -4p
+    - Subiectul 2:                                                |
+        - Ex1:                                                    |
+            - b: Numar gresit si celalt mai mare decat intervalul | -4p
+            - c: - Fara #include sau using namespace              | -1p
+                 - Fara citirea datelor                           | -1p
+                 - Instructiunea repetitiva gresita               | -2p
+            - d: - Folosit do while fara a verifica prima data    | -3p
+        - Ex2: Ambele numere off by 1                             | -6p
+        - Ex3: strcpy in loc de strcat                            | -2p
+    - Subiectul 3:                                                |
+        - Ex1:                                                    |
+            - Parametrul gresit in antet                          | -1p
+            - Numarul este construit gresit                       | -4p/6p
+        - Ex2:                                                    | -1p
+            - Declararea gresita a tabloului bidimensional        | -1p
+            - Nu au fost afisate datele                           | -1p
+        - Ex3:                                                    |
+            - a: Algoritmul nu a fost descris, doar justificat    | -1p
+            - b: - Nu a fost declarat corect fisierul             | -1p
+                 - Algoritmul nu determina valoarea corecta       | -5p 
+- Barem total:
+    - Subiectul 1: 12p
+    - Subiectul 2: 21p
+    - Subiectul 3: 15p
+    - Pct. oficiu: 10p
+    - Nota finala: 58p, Nota 6
+
+
+                         
+
+
+Rezolvare:
+SUBIECTUL I
+1.c) 10
+2.a) x = ("apa minerala", 10, 2.5);
+3.a) {volei, handbal}
+4.b) 3
+5.b) x = 8 y = 3
+
+SUBIECTUL II
+1.a) 4
+b) 12, 101
+c)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, i = 2, k = 0;
+    do {
+        while(n % i == 0){
+            k++;
+            n /= i;
+        }
+        if(i == 2) i++;
+        else i += 2;
+    } while(n >= i);
+    cout << k;
+}
+
+d)
+citeste n
+i <- 2; j <- 0
+repeta
+    cat timp n % i = 0 executa
+        k <- k + 1
+        n <- [n / i]
+    
+    daca i = 2 atunci i <- i + 1
+    altfel i <- i + 2
+cat timp n >= i
+
+scrie k
+
+2. 2021, 2020
+
+3. 
+char *id = strchr(s, ' ') + 1;
+strcpy(id, "2022");
+
+SUBIECTUL III
+1.
+#include <iostream>
+using namespace std;
+
+void secventa(int&n) {
+	int res = 0;
+	while (n != 0) {
+		if (n % 100 == 22) {
+            res *= 100;
+			res += 20;
+			n /= 100;
+			continue;
+		}
+        res *= 10;
+		res += n % 10;
+		n /= 10;
+	}
+	n = res;
+}
+
+2.
+#include <iostream>
+using namespace std;
+
+int main() {
+	int m, n;
+	int a[102, 102] = { 10 };
+	cin >> m >> n;
+	for (int i = 0; i <= m + 1; i++) {
+		for (int j = 0; j <= n + 1; j++) {
+			a[i][j] = 10;
+		}
+	}
+	for (int i = 1; i <= m; i++) {
+		for (int j = 1; j <= n; j++) {
+			cin >> a[i][j];
+		}
+	}
+	int res = 0;
+	for (int i = 1; i <= m; i++) {
+		for (int j = 1; j <= n; j++) {
+			int minLevel = a[i - 1][j];
+			if (minLevel > a[i + 1][j]) minLevel = a[i + 1][j];
+			if (minLevel > a[i][j - 1]) minLevel = a[i][j - 1];
+			if (minLevel > a[i][j + 1]) minLevel = a[i][j + 1];
+
+			if (minLevel < a[i][j]) continue;
+			res += minLevel - a[i][j];
+		}
+	}
+}
+
+3.b)
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+	ifstream fin = "bac.txt";
+	int x, y, crnt, prev = -1;
+	fin >> x >> y;
+	int res = 0;
+	while (fin >> crnt) {
+        if (crnt > y) break;
+		if (crnt != prev && crnt >= x) res += crnt;
+		prev = crnt;
+	}
+	cout << res;
+}
+a) Algoritmul proiectat este eficient deoarece parcurge numere doar o singura data si nu foloseste memorie in functie de marimea inputului.

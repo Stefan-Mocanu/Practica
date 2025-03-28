@@ -1,0 +1,96 @@
+subiectul 1
+1 c
+2 b
+3 b
+4 b
+5 c
+
+subiectul 2
+1a
+4
+1b
+7 101
+1c
+cin << n;
+i = 2, k = 0;
+for (int i = 0; i < n; i++) {
+while (n%i==0){
+k=k+1;
+n=n/i;
+}
+if (i=2) {
+i=i+1
+} else {
+i=i+2;
+}
+}
+cout >> k;
+1d
+citeste n
+i <- 2; k <- 0
+cat timp n >= i executa
+executa
+k <- k+1
+n <- [n/i]
+cat timp n%i=0
+daca i=2 atunci i <- i+2
+altfel i <- i+1
+scrie k
+2 
+2022 2023
+3
+for(int i = 1; i <= strlen(s); ++i){
+id = id + s[i]
+if(s[i] == ' '){
+break;
+}
+}
+
+subiectul 3
+1
+int secventa(n){
+while(n>0){
+res += n % 10 + res * 10;
+if (res % 100 == 22) res = res - 20;
+}
+return r
+}
+2
+int main (){
+int s = 0
+cin<<m;
+cin<<n;
+for (int i = 0; i < n ; ++i){
+for (int j = 0; j < m; ++j) {
+cin<< v[i][j]
+}
+}
+for (int i = 0; i < n ; ++i){
+for (int j = 0; j < m; ++j) {
+if(v[i][j] < v[i-1][j] & v[i][j] < v[i+1][j] & v[i][j] < v[i][j-1] & v[i][j] < v[i][j+1]){
+s++
+}
+}
+}
+cout>>s
+
+3a
+Pentru fiecare element din lista data, cautam liniar un duplicat al acestuia in toata lista
+3b
+int main(){
+int x, y
+cin<<x;
+cin<<y;
+n = 0
+while(cin<<x){
+v[n]=x;
+}
+int s = 0
+for(int i=1; i <= n; ++i){
+for(int j=1; j <= n; ++j){
+if (i=j) break;
+if (v[i]=v[j]) ++s;
+}
+cout<<s
+}
+

@@ -1,0 +1,175 @@
+Toate greselile (in valoare de 2 puncte):
+
+Subiectul I:
+
+2.c -> raspuns corect: a    -0.4p
+
+5.a -> raspuns corect: b    -0.4p
+
+Subiectul II:
+
+1.d)trebuie la penultima linie schimbat din x=1 in x!=1, fiind do while instructiunea e 
+inversa    -0.6p
+
+3.Nu am pus ";" dupa niciun cout. Conform baremului trebuie scazut -0.1p (corectitudinea globala a programului) dar IDK.  -0.1p
+
+Subiectul III:
+
+1.Functia trebuie sa fie void iar parametrul n trebuie transmis prin referinta.  -0.3p (cred, conform baremului)
+
+3.a)Nu au nicio treaba complexitatile pe care le-am scris acolo. De fapt acestea sunt O(1) pentru spatiu si O(n) pentru timp.    -0.2p
+
+
+Rezolvare subiect BAC 2022:
+
+Subiectul I:
+
+1.b
+
+(GRESIT)2.c
+
+3.d
+
+4.c
+
+(GRESIT)5.a
+
+Subiectul II:
+
+1.a)45
+
+  b)10, 11
+
+  c)#include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main()
+    {
+        int n, m, x, y;
+        cin >> m >> n;
+        x = 1;
+        while(x == 1)
+        {
+            x = m;
+            y = n;
+            n--;
+            while(x != y)
+                if(x > y)
+                    x -= y;
+                else
+                    y -= x;
+        }
+        cout << n + 1;
+        return 0;
+    }
+
+  (GRESIT)d)citeste m,n
+    x<-1
+    -repeta
+    | x<-m; y<-n; n<-n-1
+    │ -cat timp x!=y executa
+    │ │ -daca x>y atunci x<-x-y
+    │ │ │ altfel y<-y-x
+    │ │ -.
+    │ -.
+    -pana cand x=1
+    scrie n+1
+
+2.nodul 2 si nodul 8
+
+(GRESIT)3.if(x.temperatura > 11)
+    cout << "CALDUROS"
+  else if(x.temperatura < 10)
+    cout << "RACOROS"
+  else
+    cout << "NORMAL"
+
+Subiectul III:
+
+1.  int schimb(int n, int x, int p)
+    {
+        int m, mul, poz;
+        m = n;
+        n = poz = 0;
+        mul = 1;
+        while(m)
+        {
+            if(poz == p)
+                n = n + x * mul;
+            else
+                n = n + (m % 10) * mul;
+            mul *= 10;
+            poz++;
+            m /= 10;
+        }
+        return n;
+    }
+
+2.  #include <bits/stdc++.h>
+
+    using namespace std;
+
+    char s[55];
+    char vocale[] = "aeiou";
+
+    int main()
+    {
+        int i, j;
+        cin >> s;
+        for(i = 0; s[i] != 0; i++)
+            if(!strchr(vocale, s[i]))
+            {
+                for(j = 0; vocale[j] < s[i]; j++)
+                    ;
+                s[i] = vocale[j-1];
+            }
+        cout << s;
+        return 0;
+    }
+
+3.(GRESIT)a)In programul meu am folosit urmatoarele variabile: lmax - lungimea maxima a unei secvente,
+l - lungimea secventei actuale, pred - numarul care il precede pe x, x - numarul actual citit
+si cnt - contorul secventelor de lmax. Complexitatea timp este O(1) iar complexitatea spatiu este O(n).
+
+
+
+  b)#include <bits/stdc++.h>
+
+    using namespace std;
+
+    ifstream fin("bac.txt");
+
+    int lmax;
+
+    int main()
+    {
+        int i, l, x, pred, cnt;
+        fin >> pred;
+        l = cnt = 1;
+        while(fin >> x)
+        {
+            if(x % 2 != pred % 2)
+            {
+                if(l > lmax)
+                {
+                    lmax = l;
+                    cnt = 1;
+                }
+                else if(l == lmax)
+                    cnt++;
+                l = 1;
+            }
+            else
+                l++;
+            pred = x;
+        }
+        if(l == lmax)
+            cnt++;
+        cout << cnt << " " << lmax;
+        return 0;
+    }
+
+
+
+

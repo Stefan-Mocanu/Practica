@@ -1,0 +1,138 @@
+Subiect Bac 2020
+
+S - 1:
+1 d
+2 a
+3 c
+4 c
+5 b
+
+S - 2:
+
+1. c:
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a, b, c, x;
+    cin >> a;
+    c = 0;
+    do{
+        b = a, x = 0;
+        do{
+            if( b % 10 == c ) x = 1;
+            b /= 10;
+        }while(b!=0 && x!=1);
+        cout << x << ' ';
+        c += 2;
+    }while(c <= 9);
+    return 0;
+}
+
+a:  11101
+
+b: 10000, 99989
+
+d:
+
+citește a 
+c←0
+┌repetă
+│ b←a; x←0
+│
+│ dacă b%10=c atunci
+│ │ x←1
+│ └■
+│ b←[b/10]
+│
+│┌cat timp b!=0 si x!=1 executa
+││┌dacă b%10=c atunci
+│││ x←1
+││└■
+││ b←[b/10]
+│└■
+│ scrie x,’ ’
+│ c←c+2
+└până când c>9 
+
+2.
+struct calculator{
+    char monitor;
+    struct mem{
+        int interna, externa;
+    }memorie;
+}c;
+
+3.
+for(i=0;i<9;i++)
+    for(j=0;j<9;j++)
+        if(j <= i && i + j >= 9) a[i][j] = '<';
+        else a[i][j] = '>';
+
+S - 3:
+
+1.
+int suma(int a, int b){
+    int s;
+    for( int d=1; d<=a; d++ )
+        if( a%d==0 ) s += d;
+    return s;
+}
+
+2.
+#include<bits/stdc++.h>
+using namespace std;
+
+char s[104], cuv[104], sol[104] = "";
+
+int main(){
+    bool exista = false;
+    char *p, sep[]=" ";
+    cin >> s;
+    p = strtok(s, sep);
+    while(p){
+        int n = strlen(n);
+        if(n > 2){
+            exista = true;
+            strcpy(cuv, p + 1);
+            strncat(cuv, p, 1);
+            cuv[n] = 0;
+        }
+        else strcpy(cuv, p);
+        strcat(sol, cuv);
+        strcat(sol, " ");
+    }
+    strncpy(s, sol, strlen(sol) - 1);
+    if(!exista) cout << "nu exista";
+    else cout << s;
+    return 0;
+}
+
+3. b:
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+ifstream fin("bac.in");
+
+int f[1008];
+
+int main(){
+    int x, ct = 0;
+    while(fin>>x) f[x]++;
+    for( int i=1; i<1001; i++ )
+        ct += f[x]%2;
+    if( ct <= 1 ) cout<<"DA";
+    else cout<<"NU"l
+    return 0;
+}
+
+a:
+    Algoritmul proiectat se foloseste de un vector de frecventa pentru a determina de cate ori apare fiecare element.
+Daca elementele vectorului s-ar putea rearanja incat acesta sa fie palindrom atunci o valoarea trebuie sa apara
+de un numar egal de ori in prima si in a doua jumatate, astfel fiecare valoare ar trebui sa apara de un numar par 
+de ori mai putin cea din centru. Astfel numarul in variabila ct cate aparitii impare avem in sir iar daca acesta este 
+mai mare decat 1 atunci nu poate fi palindrom.
+    Algoritmul este eficient din punctul de vedere al timpului de executie deoarece are complexitate liniara O(n),
+incat el trece prin elemetnele vectorilor o singura data.

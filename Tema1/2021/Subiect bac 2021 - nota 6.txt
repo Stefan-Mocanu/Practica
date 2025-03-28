@@ -1,0 +1,208 @@
+Subiect I
+
+1. b
+2. d
+3. d
+4. a
+5. b
+
+
+Subiect II
+
+1.
+	a) 111111121
+	
+	b) 6 , 14
+
+	c) 
+
+	#include <iostream>
+	using namespace std;
+	
+	int main()
+	{
+		cin>>x>>y;
+		if(x>y) {
+
+		aux = x;
+		x = y;
+		y = aux;
+
+                }
+		
+		int nr = 1;
+		for(int i = y; i >= x; i--)
+			{
+				cout<<1;
+				if(nr >= x)
+				   cout<<2;
+				nr = nr * 3;
+				cout<<1;
+			}
+		return 0;
+	}
+
+	d)
+
+	citește x,y
+	dacă x > y atunci x <-> y
+	
+	nr <- 1
+	i <- y
+
+	cât timp i >= x execută
+		scrie 1
+		dacă nr >= x atunci
+			scrie 2
+		nr <- nr * 3
+		scrie 1
+	
+	
+
+2. (ciocârlie, scatiu) ,  (mierlă, privighetoare)
+
+
+3.
+	fs.a = 2020*f.b - 2021*f.a;
+	fs.b = 2021*f.b;
+
+Subiect III
+
+1.	
+	int divPrim(int n, int s)
+	{
+		s = 0;
+    		for(int d=2; d*d<=n ; d++)
+    		{
+        		ct = 0;
+        		while(n % d == 0) 
+        			{
+            			   n = n/d;
+            			   ct++;
+        			}
+       			 if(ct%2 != 0) s = s + d;
+    		}
+
+    		return s;
+	}
+
+2. 
+	#include <iostream>
+	using namespace std;
+
+	bool vocala (char c) 
+	{
+    	   if(strchr("aeiou", c) != 0) return 1;
+    	   else return 0;
+	}
+
+	int main() 
+	{
+   	   cin >> n >> k;
+    	   char s[11];
+    	   int ct = 0;
+    	   for(int i=1; i<=n; i++)
+    		{
+        	   cin>>s;
+       		   if(vocala(s[strlen(s) - 1]) == 1) 
+        		{
+           		   ct = ct+1;
+            		   cout<<s<<"\n";
+        		}
+                   if(ct == k) break;
+    		}
+
+    	  if(ct < k) cout<<"nu exista";
+   	  return 0;
+
+	}
+
+
+
+3.
+     b)
+	#include <iostream>
+	using namespace std;
+
+	ifstream fin("bac.txt");
+
+	int main()
+	{
+   	   int x, ant;
+    	   bool ok = 0;
+    	   fin>>x;
+   	   fin>>ant;
+    	   while(fin>>n)
+    		{
+        	    if(ant%1000 == x && n%1000 == x) 
+        		{
+            		   nr1 = ant;
+            		   nr2 = n;
+        		}
+   		}
+    	cout<<nr1<<" "<<nr2;
+    	return 0;
+
+	}
+
+
+    a)
+	Algoritmul este eficient din punct de vedere al timpului de executare întrucât complexitatea sa este liniară O(1). Am luat pe rând fiecare pereche de elemente consecutive din șir folosindu-mă de variabila ant care memorează
+mereu elementul anterior celui citit și am verificat dacă cele două numere au același sufix. La fiecare pas în care găsesc 2 numere care îndeplinesc condiția, le stochez in nr1, nr2 și astfel la final în nr1 și nr2 voi avea ultimele
+numere găsite și le afișez.
+
+
+
+Evidența greșelilor:
+
+
+Subiect I
+
+1. este greșit, varianta corectă era b
+4. este greșit, varianta corectă era b
+5. este greșit, varianta corectă era c
+
+-1,5 p
+
+
+Subiect II
+
+1.
+	a) este greșit, varianta corectă era 1111121121  (-0,6p)
+        b) 6 este corect, 14 este greșit (-0,3p)
+        c) variabilele x și y nu sunt inițializate (-0,1p)
+	d) nu se actualizează valoarea lui i in structura repetitivă (-0,2p)
+
+2.
+	răspunsul corect era (ciocârlie, scatiu) , (mierlă, scatiu) ; doar prima este corectă (-0,3p)
+
+
+Subiect III
+
+1.
+        valoarea s trebuia furnizată, nu returnată, subprogramul trebuia să fie de tip void, iar s declarată prin referință (-0,2p)
+        variabila ct nu este inițializată (-0,1p)
+
+2.
+        chiar dacă nu există k șiruri cu proprietatea cerută, programul va afișa șirurile care îndeplinesc condiția și abia apoi "nu exista"; -0,2p)
+	variabilele n și k nu sunt inițializate (-0,1p)
+
+
+3.
+     a)
+	nu se justifică eficiența programului (-0,1p)
+     b)
+	nu se specifică biblioteca <fstream> (-0,1p)
+        variabila ant nu se actualizează la fiecare pas din structura repetitivă, conducând la un rezultat greșit (-0,2p)
+
+
+
+
+Subiectul este făcut de nota 6.
+        
+
+
+
+
+
+

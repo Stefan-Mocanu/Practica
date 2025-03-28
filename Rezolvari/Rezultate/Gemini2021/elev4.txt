@@ -1,0 +1,17 @@
+Iată punctajul estimat pentru rezolvarea elevului:
+
+*   **1.1** Gresit (0 puncte)
+*   **1.2** Gresit (0 puncte)
+*   **1.3** Gresit (0 puncte)
+*   **1.4** Corect (4 puncte)
+*   **1.5** Corect (4 puncte)
+*   **2.1.a** 6 puncte
+*   **2.1.b** 6 puncte
+*   **2.1.c** 6 puncte (Algoritmul este corect, dar lipseste citirea datelor, iar incrementarea variabilei `nr` este gresita. Se penalizeaza pentru sintaxa incorecta si pentru faptul ca nu afiseaza corect in toate cazurile. )
+*   **2.1.d** 6 puncte
+*   **2.2** 6 puncte
+*   **2.3** 4 puncte (Doar una din instructiuni este corecta)
+*   **3.1** 10 puncte
+*   **3.2** 7 puncte (Lipseste initializarea lui len=0, dar rezolvarea in sine e corecta)
+*   **3.3.a** 8 puncte (Nu se foloseste `fin.close()` si variabilele `sol1` si `sol2` nu sunt actualizate corect.)
+*   **3.3.b** 2 puncte

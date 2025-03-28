@@ -1,0 +1,151 @@
+Subiectul I
+    1. C
+    2. B
+    3. A
+    4. B
+    5. C
+Subiectul al II-lea
+1.
+    a) 5
+    b) 7, 11
+    c)    
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    cin >> n;
+    i = 2;
+    k = 0;
+    while ( n >= i)
+    {
+        while( n % i == 0)
+        {
+            k = k + 1;
+            n = n / i;
+        }
+        if ( i == 2)
+            i = i + 1;
+        else
+            i = i + 2;
+    }
+    cout << k;
+    return 0;
+}
+    d)  
+citește n
+i ← 2
+k ← 0
+cât timp n≥i execută
+I	repetă
+I   I		k ← k+1
+I   I		n ← [n/i]
+I    I ___	până când n%i=0
+I
+I	dacă  i=2  atunci  i←i+1
+I	I___	altfel i← i+2  
+I___
+scrie k
+
+2.    2021, 2022
+3. 
+    int i;
+    for(i = 0; s[i] != ' '; i++);
+    strcpy(id, s+i+1);
+    strcat(id,"2022");
+
+Subiectul al III-lea
+1.
+void secventa(int &n)
+{
+    int aux, ul, pen, p10=1;
+    while(n != 0)
+    {
+        ul = n % 10;
+        pen = (n / 10) % 10;
+        if( ul == 2 && pen == 2)
+        {
+            ul = 0;
+            aux += p10 * ul;
+            p10 *= 10;
+            aux += p10 * pen;
+            p10 *= 10;
+            n /= 100;
+        }
+        else
+        {
+            aux += p10 * ul;
+            p10 *= 10;
+            n /= 10;
+        }
+
+    }
+    n=aux;
+}
+2. 
+#include <iostream>
+using namespace std;
+int n, m, i, j, a[102][102], adaugare, vecin_min;
+int main()
+{
+    cin >> m >> n;
+    for( i = 1; i <= m; i++)
+    {
+        for(j = 1; j <= n; j++)
+        {
+            cin >> a[i][j];
+        }
+    }
+    for ( i = 1; i <= m; i++)
+        a[i][0] = a[i][n+1] = 11;
+    for( i = 1; i <= n; i++)
+        a[0][i] = a[m+1][i] = 11;
+    for( i = 1; i <= m; i++)
+    {
+        for(j = 1; j <= n; j++)
+        {
+            if( a[i][j] < a[i+1][j] && a[i][j] < a[i-1][j] && a[i][j] < a[i][j-1] && a[i][j] < a[i][j+1])
+            {
+                vecin_min = a[i+1][j];
+                if(vecin_min > a[i-1][j])
+                    vecin_min = a[i-1][j];
+                if(vecin_min > a[i][j-1])
+                    vecin_min = a[i][j-1];
+                if(vecin_min > a[i][j+1])
+                    vecin_min = a[i][j+1];
+                adaugare += vecin_min - a[i][j];
+
+            }
+        }
+    }
+    cout << adaugare;
+
+    return 0;
+}
+3. 
+    a. Se citesc variabilele x și y, urmate de un șir de numere. Într-un vector caracteristic reținem aparițiile fiecărui număr, așadar v[x] = 1, dacă x apare în șir, și 0 în caz contrar. Apoi, pornim cu un index de la x la y și verificăm dacă valoarea respectivă apare sau nu în șir, folosind vectorul caracteristic construit anterior. Dacă numărul apare în șir, creștem un contor, în cazul nostru, variabila total, apoi o afișăm.
+
+Programul meu este eficient din punct de vedere al timpului de executare deoarece are o complexitate liniară.
+Programul meu este eficient din punct de vedere al memoriei utilizate deoarece folosește doar un vector caracteristic.
+
+    b. 
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("bac.txt");
+int x, y, v[1000000000], val, i, total;
+int main()
+{
+    fin >> x >> y;
+    while( fin >> val)
+    {
+        v[val] = 1;
+    }
+    for (i = x; i <= y; i++)
+    {
+        if(v[i] == 1)
+            total ++;
+    }
+    cout << total;
+    return 0;
+}

@@ -1,0 +1,35 @@
+Subiectul I:
+    2.a => -4p
+    5.b => -4p
+
+Subiectul II:
+    1)
+        b. 11, 103 (numarul 103 este prim, dar este in afara intervalul) => -1p
+        c. 
+            - lipsa corectitudine totala a programului (lipseste instructiunea "n /= i;" din cel de-al doilea while => intra in bucla infinita) => -1p
+            - lipsa declararii datelor => -1p
+            - lipsa afisarii datelor => -1p
+
+    2) Primul numar este gresit (2020 nu e >= 2022) => -3p
+    
+    3) Lipsa concatenarii "2022" la finalul string-ului => -2p
+
+Subiectul III:
+    1)
+        - lipsa operatorului de referinta => greseli:
+            - antet al subprogramului => -2p
+            - furnizare a rezultatului prin parametrul indicat => -1p
+            - corectitudine globala a subprogramului => -1p
+    
+    2)  - Lipsa functiei / verificarii a validatatilor pozitiilor in matrice:
+            - corectitudine globala a programului => -1p
+            - lipsa determinarii a valorii cerute? => -2p (din greseala anterioara, dar valoarea este gasita oarecum)
+        - Lipsa declararii unui tablou bidimensional => -1p
+        - Lipsa afisarii a valorii cerute => -1p
+        
+    3)
+        b.
+            - lipsa citirii variabilelor X si Y => -1p
+            - lipsa corectitudinii globale a programului => -1p
+
+Nota finala: 100p - 28p = 72p => 7.20

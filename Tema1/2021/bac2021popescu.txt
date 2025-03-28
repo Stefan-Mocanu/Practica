@@ -1,0 +1,138 @@
+Bac-2021
+
+Subiectul I
+1) d.
+2) d.
+3) d.
+4) b.
+5) c.
+
+Subiectul II
+1)
+a) 1111121121
+b) 15,16
+c)
+#include <iostream>
+using namespace std;
+int main(){
+cin>>x>>y;
+if(x>y)
+{
+int a=x;
+y=x;
+x=a;
+}
+nr=1;
+for(int i=y;y>=x;i--){
+cout<<1;
+if(nr>=x)
+cout<<2;
+nr=nr*3;
+cout<<1;
+}
+return 0;
+}
+d)
+citeste x,y
+daca x>y atunci x<->y
+nr<-1
+cat timp y>=x
+	scrie 1
+	daca nr>=x atunci
+		scrie 2
+	nr<-nr*3
+	scrie 1
+
+2)
+(ciocarlie,scatiu)
+(mierla, scatiu)
+3)
+fs.a=2020-f.a
+fs.b=2021-f.b
+
+Subiectul III
+1)
+int divPrim(int n, int s)
+{
+	s=0;
+	int d=2;
+	while(n>1)
+	{
+		int p=0;
+		while(n%d==0)
+		{
+		n/=d;
+		p++;
+		}
+		if(p%2==1)
+		s+=d;
+		d++;
+	}
+	return s;
+}
+2)
+#include <iostream>
+using namespace std;
+int main()
+{
+int n,k;
+char cuv[21];
+cin>>n>>k;
+for (int i=1;i<=n;i++){
+	cin>>cuv;
+	if(strchr(cuv[strlen(cuv)-1],"aeiou")!=NULL){
+		cout<<cuv;
+		k--
+		}
+	}
+	if(k==0)
+	cout<<"nu exista";
+return 0;
+}
+3)b)
+#include <iostream>
+$include <fstream>
+using namespace std;
+ifstream fin("bac.txt");
+int main(){
+int n,v[10000],k=1;
+bool ok=1;
+fin>>n;
+int cn=n;
+while(cn)
+{
+k*=10;
+cn/=10;
+}
+for(int i=0;i<n;i++)
+    fin>>v[i];
+for(int i=1;i<n;i++)
+    if(v[i]%k==v[i-1]%k&&v[i]==n)
+         {
+          ok=1;
+          a1=v[i-1];
+          a2=v[i];
+         }
+if(ok==0)
+cout<<"nu exista";
+else cout<<a1<<" "<<a2;
+return 0;
+}
+a)
+Algoritmul citeste numerele din fisier si le retine intr-un vector si dupa il parcurge ca sa determine ultimele 2 numere care au sufixul cerut si le retine in 2 variabile, daca nu exista 2 numere consecutive care sa respecte proprietatea se va afisa mesajul nu exista.
+Algoritmul este eficient din punct de vedere al timpului de executie intrucat complexitatea temporala este liniara si din punct de vedere al spatiului deoarece folosim vector.
+
+
+Observatii greseli:
+Subiect I
+1) verificarea merge daca numerele sunt pare dar pot sa fie si impare. 
+Subiect II
+1)
+b) 16 nu respecta, se for afisa 4 de 2 
+c) nu am declarat variabilele, interschimbarea e proasta, iar forul ruleaza la nesfarsit, am comaparat cu y in loc de i
+d) nu am pus ca y sa scada, astfel nu iese din while
+3) trebuia sa aducem la numitor comun si dupa sa efectuam scaderea numai la numarator
+Subiect III
+1) programul returneaza in loc sa transmita ca parametru
+2) nu am dat #include <cstring>, strchr are parametrii introdusi gresit, cuvintele nu sunt afisate cu endl, afiseaza toate cuv care se termina cu vocala, iar k se poate sa ajunga la un nr negativ si tot sa afiseze nu exista, lipsteste ; la k--
+3) programul nu e eficient deoarece retine elementele intr-un vector si dupa il parcurge din nou, de asemenea nu inchidem fisierul de citire

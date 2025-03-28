@@ -1,0 +1,181 @@
+Am rezolvat https://www.pbinfo.ro/resurse/9dc152/examene/2020/E_d_Informatica_2020_sp_MI_C_var_06_LRO.pdf
+
+Subiectul I
+1. d
+2. b
+3. c
+4. c
+5. b
+
+Subiectul II
+1.
+   a. 1 1 1 0 0
+   b. 102468 și 886420
+   c.
+   #include    <iostream>
+
+    using namespace std;
+
+    int main()
+    {
+        int a, c, b, x;
+        cin >> a;
+        c = 0;
+        do
+        {
+            b = a;
+            x = 0;
+            while(b != 0 && x != 1)
+            {
+                if(b % 10 == c)
+                    x = 1;
+                b = b / 10;
+            }
+            cout << x << " ";
+            c = c + 2;
+        }while(c <= 9)
+        return 0;
+    }
+    d.
+    citește a (număr natural)
+    c <- 0
+    repetă
+    --- b <- a; x <- 0
+    --- cât timp b != 0 și x != 1
+    ------ dacă b % 10 = c atunci
+    --------- x <- 1
+    ------ b <- [b/10]
+    --- scrie x, ’ ’
+    --- c <- c + 2
+    până când c > 9
+
+2.
+struct calculator
+{
+    char monitor;
+    struct memorie
+    {
+        int internă;
+        int externă;
+    };
+}c
+
+3.
+for(i = 0; i < 9; i++)
+    for (j = 0; j < 9; j++)
+        if (i > j && i + j > 8)
+            a[i][j] = '<';
+        else
+            a[i][j] = '>';
+
+Subiectul III
+1.
+ int suma(int a, int b)
+{
+    int s = 0, i;
+    for(i = 1; i <= a; i++)
+    {
+        if(a % i == 0 || b % i == 0)
+            s = s + i;
+    }
+    return s;
+}
+
+2.
+#include    <iostream>
+#include    <cstring>
+
+using namespace std;
+
+int main()
+{
+    char text[101], șir[101] = "";
+    int cnt = 0;
+    cin.getline(text, 101);
+
+    char *cuvânt = strtok(text, " ");
+    while(cuvânt)
+    {
+        char aux[101], primaLit;
+        strcpy(aux, cuvânt);
+        if(strlen(cuvânt) >= 3)
+        {
+            primaLit = aux[0];
+            for(int i = 0; i < strlen(cuvânt); i++)
+                aux[i] = aux[i + 1];
+            aux[strlen(cuvânt) - 1] = primaLit;
+
+            cnt++;
+        }
+        strcat(șir, aux);
+        strcat(șir, " ");
+        cuvânt = strtok(NULL, " ");
+    }
+    if(cnt != 0)
+        cout << șir;
+    else
+        cout << "nu există";
+    
+    return 0;
+}
+
+3.
+a.
+Citirea datelor din fișierul bac.în și stocarea lor într-un vector.
+
+Construirea unei frecvențe a numerelor din șir.
+
+Verificarea condiției de palindrom:
+1. Un șir poate fi rearanjat într-un palindrom dacă cel mult un număr apare de un număr impar de ori.
+2. Vom parcurge vectorul și pentru fiecare element vom număra de câte ori apare el în restul vectorului.
+3. Dacă există mai mult de un astfel de număr, răspundem NU, altfel DA.
+
+b.
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    ifstream fin("bac.în");
+    
+    int v[100000], n = 0, i, j;
+    
+    while (fin >> v[n]) {
+        n++;
+    }
+    fin.close();
+
+    int imp = 0;
+    for (i = 0; i < n; i++) {
+        int apariții = 0;
+        for (j = 0; j < n; j++) {
+            if (v[i] == v[j])
+                apariții++;
+        }
+        
+        if (apariții % 2 == 1) {
+            imp++;
+        }
+        
+        if (imp > 1) {
+            cout << "NU";
+            return 0;
+        }
+    }
+    
+    cout << "DA";
+    return 0;
+}
+
+
+Greșeli:
+1. Am greșit grilă 5, am pus b în loc de a
+2. Am greșit subiectul ÎI 1 b, am pus 102468 și 886420 în loc de 102468 și 986420
+3. Am greșit subiectul ÎI 1 c, am scris while în loc de do while și am uitat să pun ; la final de do while
+4. Am greșit subiectul ÎI 2, am scris struct memorie în loc de struct {} memorie; și am uitat să pun ; la final de struct calculator
+5. Subiectul III 1, am scris if(a % i == 0 || b % i == 0) în loc de if(a % i == 0 && b % i == 0)
+6. Subiectul III 3, nu este optimizat, am scris 2 for-uri în loc de unul singur și am uitat să includ biblioteca <fstream>
+
+Pentru fiecare greșeală am pierdut 3 puncte, deci am pierdut 18 puncte.
+
+Notă finală: 100 - 18 = 82

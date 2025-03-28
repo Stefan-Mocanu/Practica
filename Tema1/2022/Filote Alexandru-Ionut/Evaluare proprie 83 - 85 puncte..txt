@@ -1,0 +1,7 @@
+Evaluare proprie: 83 - 85 puncte.
+Greseli:
+Subiectul 1: Grila de la punctele 4 si 5. (Minus 8p din cele 20 pentru grila)
+Subiectul 2: Problema 1 d) Nu este verificata conditia initiala de intrare in do-while.(Lipseste un if) (Minus 1,2 p)
+Subiectul 2: Problema 2 O varianta buna, o varianta gresita, ar trebui sa ofere punctaj partial(3p)
+Subiectul 2: Problema 3 Copierea sirului se face cu tot cu spatiu, acesta conducand la un rezultat eronat. Totusi, conform baremului, ar trebui acordat punctaj partial intre 2 si 4 puncte.
+Subiectul 3 : Problema 2 Conditia minim[i][j]!=11 este reduntanta, dar nu afecteaza logica programului.

@@ -1,0 +1,18 @@
+Nota:74
+
+S1
+2 c in loc de a
+3 c in loc de b
+5 a in loc de d 
+S2
+1
+b) primul numar e gresit iar al doilea numar e prea mare al doilea numar 
+d) trebuie pana cand p>x
+2 o solutie e gresita 
+S3 
+2 Variabilele nu sunt declarate
+datele de intrare nu au fost citite
+afiseaza ultima valoare
+3 a)nu a justificat de ce e eficient
+b) a gresit numele fisierului
+	nu a pus nr de la 0

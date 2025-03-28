@@ -1,0 +1,25 @@
+2021, nota 5
+10+ 12 + 12 + 10 + 6 = 50
+Subiectul I - au fost greșite grilele 4, 5
+Subiectul II - am greșit răspunsurile la 2, iar la 3 nici structurile nu sunt accesate corect, nici atribuirile nu sunt corecte, iar semnul ";" lipsește peste tot
+Subiectul III - 
+exercițiul 1: 
+la antetul funcției nu e corectă structura (lipsește un tip de date pentru return valid), 
+parametrii sunt scriși în ordine inversă, 
+argumentul s nu este transmis prin referință, 
+nu se determină valoarea (niciun aspect (identificare a unui divizor, identificare a unui număr/divizor prim, identificare a puterii unui divizor în descompunerea în factori primi, identificare a unei puteri impare, algoritm de bază pentru însumarea unei serii de valori, valori suport însumate) nu este îndeplinit), 
+lipsa declarării variabilei locale i, 
+greșeli de sintaxă (acoladă în plus, o virgulă în loc de punct și virgulă la structura for, lipsa semnului ";" la instrucțiunile necesare)
+
+exercițiul 2:
+tipul string nu este definit,
+datele nu sunt citite corect (n, s nu trebuie să fie parametri ai lui main, iar structura repetitivă pentru citire intră în buclă infinită),
+nu se determină cuvintele (niciun aspect (parcurgere a unei serii de cuvinte, acces la ultima
+literă a unui cuvânt, identificare a unei vocale/consoane, algoritm de bază pentru numărarea unei serii de valori, cuvinte suport numărate) nu este îndeplinit,
+afișarea nu se face (instrucțiune greșită, nu luăm cazul nu există), 
+lipsește o acoladă, 
+lipsește semnul ";" la două instrucțiuni
+
+exercițiul 3:
+a) algoritm greșit, ambiguități în exprimare, nu justifică eficiența
+b) nu am declarat nicio variabilă ifstream pentru citire, algoritmul este aproape complet greșit, nu am declarat variabilele a, b, c, d; bac.txt nu există, iar "bac.txt" nu este folosit corespunzător 

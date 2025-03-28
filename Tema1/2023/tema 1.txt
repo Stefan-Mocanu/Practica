@@ -1,0 +1,212 @@
+S1: am gresit grila 1 si grila 5 (-0.8p)
+S2: la b. am gresit al doilea numar, la d. la conditia finala am pus p < x in loc de p > x, la 2. in loc de (mare, rau) am pus (mare, ploaie)
+S3: la 1 in loc se returnez 1 am returnat o variabila float intr-o functie int, la 2 vectorul e prea mic si ultimul rand nu ar trebui sa poata fi citit, la 3 nu am inchis fisierul de citire
+
+Nota finala: 8
+
+Subiectul I
+1. c
+2. c
+3. c
+4. b
+5. b
+
+Subiectul II
+a. 9752
+b. 321, 121
+c.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x;
+    cin >> x;
+
+    int p = 1;
+    int m = -1;
+    while (p <= x) {
+        int c = (x / p) % 10;
+
+        if (c > m) {
+            m = c;
+            p = p * 10;
+        } 
+        else {
+            x = (x / (p * 10)) * p + (x % p);
+        }
+    }
+    if (m >= 0) {
+        cout << x << endl;
+    } else {
+        cout << "nul" << endl;
+    }
+
+    return 0;
+}
+d.   	
+citeste x
+p <- 1; m <- 1
+repeta
+	c <- [x/p] % 10
+	daca c > m atunci
+		m <- c; p <- p * 10
+	altfel 
+		x <- [x/(p * 10)] * p + x % p
+pana cand p < x
+daca m >= 0 atunci scrie x
+	altfel scrie "nul"
+2. 
+(mare, ploaie)
+(ocean, ploaie, rau)
+3.
+struct lalea {
+   char denumire[21];
+   int stoc, pret;
+};
+lalea f[10];
+
+Subiectul III
+1.
+int abundent (int n)
+{
+    if (n < 4)
+    {
+        return 0;
+    }
+    else 
+    {
+        float maxi = 0;
+        int sd = 0;
+        for (int d = 1; d <= n; d += 1) 
+        {
+           if (n % d == 0)
+           {
+               sd += d;
+           }
+        }
+        sd = float(sd);
+        maxi = sd/n;
+        
+        for (int x = 4; x < n; x++) 
+        {
+            float s = 0;
+            for (int d = 1; d <= x ; d += 1) 
+            {
+                if (x % d == 0)
+                {
+                    s += d;
+                }
+                
+            }
+            if ((s/x) > maxi) return 0;
+        }
+        return s/x;
+    }
+}
+2.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int ns, np;
+   cin >> ns >> np;
+   int v[ns][np], cnt;
+   for (int i = 1; i <= ns; i++)
+   {
+       for (int j = 1; j <= np; j++)
+       {
+           cin >> v[i][j];
+       }
+   }
+   for (int i = 1; i <= ns; i++)
+   {
+       int max = 0;
+       for (int j = 1; j <= np; j++)
+       {
+           if (v[i][j] > max)
+           {
+               max = v[i][j];
+               cnt = j;
+           }
+       }
+       cout << i << ":"<< cnt << " ";
+   }
+}
+3.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f ("bac.txt");
+int x, suf[100], pref[100],cnt;
+int main()
+{
+   while (f >> x)
+   {
+       if (x < 100)
+       {
+           x = x;
+       }
+       else
+       {
+           if (x % 100 > 9)
+           {
+               suf[x % 100] += 1;
+           }
+           while (x > 99)
+           {
+               x = x / 10;
+           }
+           pref[x] += 1;
+       }
+   }
+   for (int i = 10; i <= 99; i++)
+   {
+       if (suf[i] == pref[i])
+       {
+           cnt++;
+       }
+   }
+   cout << cnt;
+}
+3.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f ("bac.txt");
+int x, suf[100], pref[100],cnt;
+int main()
+{
+   while (f >> x)
+   {
+       if (x < 100)
+       {
+           x = x;
+       }
+       else
+       {
+           if (x % 100 > 9)
+           {
+               suf[x % 100] += 1;
+           }
+           while (x > 99)
+           {
+               x = x / 10;
+           }
+           pref[x] += 1;
+       }
+   }
+   for (int i = 10; i <= 99; i++)
+   {
+       if (suf[i] == pref[i] and suf[i] != 0)
+       {
+           cnt++;
+       }
+   }
+   cout << cnt;
+}

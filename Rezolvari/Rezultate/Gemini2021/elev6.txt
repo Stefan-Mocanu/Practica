@@ -1,0 +1,25 @@
+Iată evaluarea rezolvării elevului, cu punctajele aferente:
+
+**Subiectul I**
+
+*   **1.1** Gresit (Raspuns elev: a, raspuns corect: c)
+*   **1.2** Gresit (Raspuns elev: d, raspuns corect: a)
+*   **1.3** Gresit (Raspuns elev: d, raspuns corect: d)
+*   **1.4** Corect (Raspuns elev: a, raspuns corect: a)
+*   **1.5** Gresit (Raspuns elev: b, raspuns corect: c)
+
+**Subiectul II**
+
+*   **2.1.a** 6 (corect)
+*   **2.1.b** 6 (corect)
+*   **2.1.c** 1 (funcționalitate minimă, erori sintactice și logice majore. Nu se afiseaza nimic, bucla infinita)
+*   **2.1.d** 4 (idee corectă de algoritm, dar bucla este greșită, incrementarea lui i)
+*   **2.2** 3 (identifică o pereche corectă)
+*   **2.3** 0 (niciun punct, ambele atribuiri sunt greșite)
+
+**Subiectul III**
+
+*   **3.1** 0 (funcția are erori majore de sintaxă și logică, nu face nimic corect)
+*   **3.2** 0 (are erori majore de sintaxă și logică, nu face nimic corect)
+*   **3.3.a** 1 (menționează ideea de comparare a ultimei cifre)
+*   **3.3.b** 0 (încearcă să citească din fișier, dar are erori majore și nu respectă cerința)

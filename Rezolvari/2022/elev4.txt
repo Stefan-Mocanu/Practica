@@ -1,0 +1,180 @@
+Subiectul 1:
+1. a)
+2. b)
+3. d)
+4. d)
+5. d)
+Subiectul 2:
+1. a) 4
+1. b) 11
+1. c)
+include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int i = 2;
+    int k = 0;
+    while (n >= i)
+    {
+        while (n % i == 0)
+        {
+            k++;
+            n /= i;
+        }
+    if (i == 2)
+        i++;
+    else
+        i += 2;
+    }
+    cout << k;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+1. d)  
+
+
+
+citeste n
+i<-2;
+l<-0
+cat timp n>=i executa
+|	executa
+|	|	daca n%i=0
+|	|	|	k<-k+1
+|	|	|	n<-[n/i]
+|	|	-■	
+|	-■ pana cand n % i != 0
+|	daca i=2 atunci i <- i + 1 atunci i <- i+1
+|	| altfel i<-i+2
+|	-■
+-■
+scrie k
+2. 2024, 2023
+3.
+int i;
+for(i = 0; s[i] != ' ' && s[i] != '\0'; i++)
+    ;
+i++;
+int k = 0;
+while(s[i] != '\0')
+id[k++] = s[i++];
+id[k++] = '2';
+id[k++] = '0';
+id[k++] = '2';
+id[k++] = '2';
+id[k] = '\0';
+
+
+Subiectul 3:
+1.
+void secventa(int &n) 
+{
+    int clona = n;
+    int ok = 0;
+    int p = 1;
+    while (clona != 0) 
+    {
+        int ultimelecif = clona % 100;
+        if (ultimelecif == 22) 
+        {
+        n = (n / p - 2) * p + n % p;
+        }
+        clona /= 10;
+        p *= 10;
+    }
+}
+
+2.
+
+#include <iostream>
+using namespace std;
+
+int n, m;
+int a[99][99];
+int dx[] = {0, 0, 1, -1};
+int dy[] = {1, -1, 0, 0};
+
+int main()
+{
+    int ans = 0;
+    cin >> n >> m;
+    for(int i = 1; i <= n; i++)
+        for(int j = 1; j <= m; j++)
+            cin >> a[i][j];
+ 
+    for(int i = 1; i <= n; i++)
+        for(int j = 1; j <= m; j++)
+        {
+            int mn = 15;
+            for(int k = 0; k < 4; k++)
+            {
+                int x = i + dx[k];
+                int y = j + dy[k];
+                if(x >= 1 && x <= n && y >= 1 && y <= m && a[x][y] < mn)
+                    mn = a[x][y];
+                
+            
+            }
+            if(a[i][j] < mn)
+                    ans += mn - a[i][j];
+        }
+    cout << ans;
+    return 0;
+}
+
+
+ 
+3.
+b.
+#include <iostream>
+#include <fstream>
+
+
+ifstream fin("bac.txt");
+
+
+
+int main()
+{
+    int x, y;
+    int val, last,ans = 0;
+    bool inInterval = false;
+    fin >> x >> y;
+    fin >> last;
+    if(last >= x)
+    {
+        inInterval = true;
+        if(last <= y)
+            ans++;
+    }
+    while(cin >> val)
+    {
+        if(val >= x)
+        {
+            inInterval = true;
+        }
+        if(val <= y && inInterval)
+        {
+            if(val != last)
+            {
+                ans++;
+            }       
+        }
+        last = val;  
+    }  
+
+    cout << ans;
+    return 0;
+}
+    a. Algoritmul proiectat citeste numerele x,y din fisierul bac.txt si  apoi restul numerelor utilizind 2 variabile last si val reprezentand penultima valoare citita si valoarea curenta. Cand gaseste un numar mai mare decat x prin intermediul variabilei inInterval verifica daca a inceput intervalul, iar apoi verifica daca val este in interval si totodata mai mic ca y. Daca da, verifica daca e diferit de last, adica este un element nou si actualizeaza ans unde stocam raspunsul final. Algoritmul proiectat are complexitate temporala O(n) unde n e numarul de numere citite din fișier.

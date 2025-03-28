@@ -1,0 +1,186 @@
+Greseli
+========
+Subiectul 2, problema 1, punctul b: numerele nu sunt in intervalul [100, 999] (-6p)
+Subiectul 2, problema 1, punctul c: variabila c nu este declarata inainte de a fi folosita (-1p)
+Subiectul 2, problema 3: denumirea este un singur caracter, nu un sir de caractere; nrFire si pretFir ar trebui sa fie intr-un struct imbricat (-3p)
+Subiectul 3, problema 1: cand am calculat r_n si r_k, nu am facut cast la float (-1p)
+Subiectul 3, problema 2: am calculat minimul dintre adancimi, nu maximul (-2p)
+
+Nota finala: 8.70 = 9
+
+
+Varianta 5 BAC 2023
+====================
+
+# Subiectul 1
+
+1. d
+2. c
+3. c
+4. b
+5. a
+
+# Subiectul 2
+## Problema 1
+
+a. 9752
+b. 7421, 8642
+c.
+#include <iostream>
+using namespace std;
+int main() {
+    int x;
+    cin >> x;
+    int p = 1, m = -1;
+    while (p <= x) {
+        c = x/p%10;
+        if (c > m) {
+            m = c;
+            p = p * 10;
+        } else {
+            x = x/(p*10)*p + x%p;
+        }
+    }
+    if (m >= 0) {
+        cout << x;
+    } else {
+        cout << "nul";
+    }
+}
+d.
+citeste x
+p <- 1
+m <- -1
+daca p <= x atunci
+    executa
+        c <- [x/p]%10
+        daca c > m
+            m <- c
+            p <- p * 10
+        altfel
+            x <- [x/(p*10)]*p + x%p
+    cat timp p <= x
+daca m >= 0
+    scrie x
+altfel
+    scrie "nul"
+
+## Problema 2
+inainte: (mare, rau)
+dupa: (ocean, ploaie, rau)
+
+## Problema 3
+struct lalea {
+    char denumire;
+    int nrFire, pretFir;
+} f[10];
+
+# Subiectul 3
+## Problema 1
+int abundent(int n) {
+    int s_n = 0;
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            s_n += i;
+        }
+    }
+    
+    float r_n = s_n / n;
+    for (int k = 1; k < n; k++) {
+        int s_k = 0;
+        for (int i = 1; i <= k; i++) {
+            if (k % i == 0) {
+                s_k += i;
+            }
+        }
+        float r_k = s_k / k;
+        if (r_k >= r_n) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+## Problema 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int ns, np;
+    cin >> ns >> np;
+    
+    int adancimi[1000][50];
+    
+    for(int i = 0; i < ns; i++) {
+        for(int j = 0; j < np; j++) {
+            cin >> adancimi[i][j];
+        }
+    }
+    
+    for(int i = 0; i < ns; i++) {
+        int max_adancime = -1;
+        int punct_max = -1;
+        
+        for(int j = 0; j < np; j++) {
+            if(adancimi[i][j] < max_adancime) {
+                max_adancime = adancimi[i][j];
+                punct_max = j;
+            }
+        }
+        
+        cout << (i+1) << ":" << (punct_max+1) << " ";
+    }
+    
+    return 0;
+}
+
+## Problema 3
+a. Algoritmul citeste numerele din fisier si extrage prefixul si sufixul de 2 cifre, daca numarul citit are cel putin 3 cifre. Apoi, algoritmul creste contorul pentru numarul de aparitii al prefixului si sufixului. La final, pentru fiecare sufix si prefix intre 10 si 99, se verifica daca apare de acelasi numar de ori ca prefix si sufix si, daca da, se incrementeaza rezultatul. Algoritmul este eficient din punct de vedere al timpului de executie deoarece parcurge numerele o singura data. 
+b.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+ifstream fin("bac.txt");
+
+int prefix(int num) {
+    if(num < 100) return -1;
+    while(num >= 100) {
+        num /= 10;
+    }
+    return num;
+}
+
+int sufix(int num) {
+    if (num < 100) return -1;
+    return num % 100;
+}
+
+int main(){
+    int cntprefix[100] = {0};
+    int cntsufix[100] = {0};
+
+    int num;
+    while(fin >> num) {
+        int p = prefix(num);
+        int s = sufix(num);
+        if(p != -1) {
+            cntprefix[p]++;
+        }
+        if(s != -1) {
+            cntsufix[s]++;
+        }
+    }
+
+
+    int rez = 0;
+    for (int val = 10; val <= 99; val++) {
+        int p = cntprefix[val];
+        int s = cntsufix[val];
+        if(p && p == s) {
+            rez++;
+        }
+    }
+
+    cout << rez;
+}

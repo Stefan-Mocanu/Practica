@@ -1,0 +1,25 @@
+Iată punctajul și observațiile pentru fiecare exercițiu:
+
+**Subiectul I**
+
+*   **1.1** Gresit. (0 puncte)
+*   **1.2** Gresit. (0 puncte)
+*   **1.3** Gresit. (0 puncte)
+*   **1.4** Corect. (4 puncte)
+*   **1.5** Gresit. (0 puncte)
+
+**Subiectul II**
+
+*   **2.1.a** 4 puncte (aproape corect, dar nu respectă complet formatul cerut)
+*   **2.1.b** 6 puncte (corect)
+*   **2.1.c** 2 puncte (structura generală este prezentă, dar logica buclei și condițiile sunt incorecte. Nu afișează corect valorile)
+*   **2.1.d** 4 puncte (pseudocodul este parțial corect, dar nu reflectă complet logica necesară)
+*   **2.2** 6 puncte (corect)
+*   **2.3** 6 puncte (corect)
+
+**Subiectul III**
+
+*   **3.1** 3 puncte (funcția este declarată, dar nu calculează corect suma divizorilor primi cu exponent par. Setează s = 0 in interiorul functiei si nu returneaza nimic)
+*   **3.2** 7 puncte (codul este aproape corect, dar afiseaza primele k cuvinte indiferent daca sunt mai putine de k)
+*   **3.3.a** 2 puncte (descrierea eficienței temporale este corectă. Dar afirmatia referitoare la eficienta spatiala este partial corecta. Nu mentioneaza faptul ca algoritmul necesita memorie suplimentara pentru variabilele a si b in cazul in care exista numerele cautate)
+*   **3.3.b** 6 puncte (codul este aproape corect, dar nu funcționează corect dacă numerele cu ultimele 3 cifre egale cu x apar la începutul fișierului. Trebuie initializat ant cu o valoare corecta din fisier sau sa adauge o conditie suplimentara in if)
