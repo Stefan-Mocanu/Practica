@@ -1,0 +1,98 @@
+Subiect de bacalaureat 2022
+S1.
+1.c
+  2.d
+  3.a
+  4.a
+  5.c
+S2. 
+a.	4
+b.	10, 11
+c.	#include <iostream> 
+using namespace std;
+
+int main() {
+
+ int n, I, k;
+ cin >> n;
+
+ i = 2;
+ k = 0;
+
+ While (n >= i) {
+
+  While (n % I == 0) {
+   
+   k++;
+   n /= i;
+   }
+   If (I == 2)
+    I++;
+   Else
+    I += 2;
+  }
+}
+d.	
+citeşte n
+(număr natural)
+I=2; k=0
+Daca n >= I atunci
+┌executa
+│┌cât timp n%i=0 execută
+││ k=k+1
+││ n=[n/i]
+│└■
+│┌dacă i=2 atunci i=i+1
+││altfel i=i+2
+│└■
+└■pana cand (n < i)
+scrie k
+2. 
+2021, 2022
+3.
+strcat(id, “Popescu”);
+strcat(id, “2022”);
+S3.
+#include <bits/stdc++.h>
+using namespace std;
+
+string fileName = "number";
+ifstream fin(fileName + ".in");
+ofstream fout(fileName + ".out");
+
+int main() {
+
+    int n;
+    cin >> n;
+
+    int res = 0, p10 = 1;
+
+    while (n > 9) {
+
+        int nr = n % 100;
+
+        if (nr == 22)
+            nr = 20;
+
+        res += nr * p10;
+        n /= 100;
+        p10 *= 100;
+    }
+
+    if (n) {
+
+        res += n * p10;
+    }
+
+    cout << res;
+
+    return 0;
+}
+
+
+Greseli:
+1.	S1 - 4 - raspuns correct b
+2.	S2 – 1.b – 10 nu e numar prim
+3.	S2 – 2 -2021 numar invalid
+4.	S2 -3 – programul nu tine cont de s
+5.	S3 – 1 – programul nu ia anumite cazuri

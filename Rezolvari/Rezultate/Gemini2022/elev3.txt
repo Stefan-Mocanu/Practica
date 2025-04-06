@@ -1,0 +1,23 @@
+**Subiectul 1:**
+
+*   1.1 Gresit: 0
+*   1.2 Gresit: 0
+*   1.3 Gresit: 0
+*   1.4 Gresit: 0
+*   1.5 Gresit: 0
+
+**Subiectul 2:**
+
+*   2.1.a 4
+*   2.1.b 0
+*   2.1.c 2
+*   2.1.d 0
+*   2.2 0
+*   2.3 2
+
+**Subiectul 3:**
+
+*   3.1 0
+*   3.2 3
+*   3.3.a 1
+*   3.3.b 0

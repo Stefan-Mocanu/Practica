@@ -1,0 +1,31 @@
+Iată evaluarea rezolvării elevului, conform baremului și observațiilor:
+
+**Subiectul 1**
+
+*   **1.1** Gresit (Răspuns elev: c, Corect: c) - **4**
+*   **1.2** Gresit (Răspuns elev: d, Corect: d) - **4**
+*   **1.3** Gresit (Răspuns elev: a, Corect: a) - **4**
+*   **1.4** Gresit (Răspuns elev: a, Corect: b) - **0**
+*   **1.5** Gresit (Răspuns elev: c, Corect: c) - **4**
+
+**Subiectul 2**
+
+*   **2.1.a** Corect - **6**
+*   **2.1.b** Parțial corect (11 e corect, 10 nu) - **3**
+*   **2.1.c**
+    *   `#include <iostream>` si `using namespace std;` sunt corecte, deci 2 puncte
+    *   Declararea variabilelor e in mare parte corecta, deci 2 puncte
+    *   `while(n>=i)` e corect, 2 puncte
+    *   Incrementarea lui i e corecta, 2 puncte
+    *   Greseli: `i` in loc de `I` (de 2 ori), lipseste `cin>>n` inainte de a folosi `n`. Lipseste return 0; Nu e initializat `i` cu 2, deci nu va intra in while. Lipseste afisarea lui `k`.
+    *   Total: **6**
+*   **2.1.d** Algoritm principial corect, dar cu greseli minore de sintaxa (e.g., 'Daca' in loc de 'daca', '[' in loc de '('). Nu are citirea lui n. Punctaj **4**
+*   **2.2** Gresit (2021 nu e corect) - **0**
+*   **2.3** Ideea de concatenare e prezenta, dar fara sa tina cont de s, deci **3**
+
+**Subiectul 3**
+
+*   **3.1**  Programul este principial corect, dar nu functioneaza in toate cazurile (ex: input 2222 => output 2020; corect 2020). Nu foloseste fisierele de input/output (desi le declara). Punctaj **6**
+*   **3.2** Nu este implementat, deci **0**
+*   **3.3.a** Nu este implementat, deci **0**
+*   **3.3.b** Nu este implementat, deci **0**

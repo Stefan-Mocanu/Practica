@@ -1,0 +1,17 @@
+Iată evaluarea rezolvării elevului, cu punctajul aferent fiecărui item:
+
+*   **1.1** Gresit (Raspunsul corect este d) **0 puncte**
+*   **1.2** Gresit (Raspunsul corect este b) **0 puncte**
+*   **1.3** Corect **4 puncte**
+*   **1.4** Corect **4 puncte**
+*   **1.5** Gresit (Raspunsul corect este a) **0 puncte**
+*   **2.1.a** Corect **6 puncte**
+*   **2.1.b** Corect **6 puncte**
+*   **2.1.c** Parțial Corect (Programul are erori de sintaxă si logica (ex: n /= I;)si (If in loc de if) si (I > n in loc de i>n)) **4 puncte**
+*   **2.1.d** Corect **6 puncte**
+*   **2.2** Parțial Corect (lipseste un numar. Raspuns corect: 2024,2025,2026) **3 puncte**
+*   **2.3** Gresit (corect era strcat(s, "2022")) **0 puncte**
+*   **3.1** Corect **10 puncte**
+*   **3.2** Nu a fost rezolvat **0 puncte**
+*   **3.3.a** Nu a fost rezolvat **0 puncte**
+*   **3.3.b** Nu a fost rezolvat **0 puncte**

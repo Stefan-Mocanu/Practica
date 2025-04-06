@@ -1,0 +1,25 @@
+Iată evaluarea rezolvării elevului:
+
+**Subiectul I**
+
+*   **1.1** Corect (C) - 4 puncte
+*   **1.2** Corect (B) - 4 puncte
+*   **1.3** Corect (A) - 4 puncte
+*   **1.4** Corect (B) - 4 puncte
+*   **1.5** Corect (C) - 4 puncte
+
+**Subiectul al II-lea**
+
+*   **2.1.a** 6 puncte
+*   **2.1.b** 6 puncte
+*   **2.1.c** 6 puncte. Programul are erori de compilare(lipseste declararea variabilei n). Nu este optim, deoarece nu foloseste divizorii primi, astfel algoritmul este ineficient
+*   **2.1.d** 6 puncte
+*   **2.2** 0 puncte. Raspunsul corect era 2021, 2023
+*   **2.3** 4 puncte. Copiere incorecta a sirului. Lipseste alocarea de memorie. Lipseste includerea bibliotecii <string.h>
+
+**Subiectul al III-lea**
+
+*   **3.1** 7 puncte. Functia returneaza o valoare incorecta.
+*   **3.2** 7 puncte. Algoritmul este corect, dar ineficient(depaseste timpul de executie). Folosirea valorii 11 este riscanta, deoarece nu este specificat intervalul numerelor.
+*   **3.3.a** 1 punct. Descrierea algoritmului este incompleta. Afirmatia ca programul este eficient din punct de vedere al memoriei este gresita.
+*   **3.3.b** 0 puncte. Vectorul `v` este prea mare pentru a fi alocat pe stivă. Depaseste memoria.

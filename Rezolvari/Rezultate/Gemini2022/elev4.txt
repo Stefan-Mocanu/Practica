@@ -1,0 +1,25 @@
+Iată punctajul și corectitudinea răspunsurilor elevului:
+
+**Subiectul 1:**
+
+*   **1.1:** Incorect (răspuns elev: a) - Corect b)
+*   **1.2:** Corect (răspuns elev: b)
+*   **1.3:** Incorect (răspuns elev: d) - Corect b)
+*   **1.4:** Corect (răspuns elev: d)
+*   **1.5:** Corect (răspuns elev: d)
+
+**Subiectul 2:**
+
+*   **2.1.a:** 6
+*   **2.1.b:** 6
+*   **2.1.c:** 10
+*   **2.1.d:** 6
+*   **2.2:** 0 (explicație:  Elevul a scris doar niște numere, dar nu a oferit exemple de numere cu proprietatea cerută.)
+*   **2.3:** 5 (explicație:  Corectitudinea implementarii operatiilor pe siruri este corecta cu exceptia faptului ca linia ``while(cin >> val)`` este gresita, aceasta neavand ce citi deoarece se asteapta input de la tastatura si nu din fisierul bac.txt)
+
+**Subiectul 3:**
+
+*   **3.1:** 0 (explicație:  Solutia data nu este corecta.  Codul elimină incorect cifrele 22, având probleme cu poziționarea și cu cazul în care 22 apare la începutul numărului.)
+*   **3.2:** 10
+*   **3.3.a:** 2
+*   **3.3.b:** 7 (explicație:  Corectitudinea implementarii este aproape perfecta cu exceptia instructiunii ``while(cin >> val)`` care necesita input de la tastatura si nu din fisier.)

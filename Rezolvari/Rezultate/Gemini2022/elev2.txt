@@ -1,0 +1,25 @@
+Iată punctajul și corecturile pentru rezolvarea elevului:
+
+**Subiectul I:**
+
+*   1.1 Gresit (Raspuns corect b)
+*   1.2 Corect
+*   1.3 Corect
+*   1.4 Corect
+*   1.5 Gresit (Raspuns corect c)
+
+**Subiectul II:**
+
+*   2.1.a 6
+*   2.1.b 6
+*   2.1.c 3 (Nu citește pe n, nu afișează nimic, bucla while internă este inutilă, incrementarea lui i este greșită, lipsește condiția inițială `n>1`)
+*   2.1.d 3 (Greșeala majoră este incrementarea lui k cu i în loc de 1.)
+*   2.2 6
+*   2.3 4 (Lipseste conditia `i < strlen(s)` in prima bucla for, iar `id[k] = 0;` este corect, nu `NULL`.)
+
+**Subiectul III:**
+
+*   3.1 2 (Funcția nu este corectă, nu face ce se cere. Are erori logice majore. Conditia `n>=0` in while e gresita. Incrementarea lui i e gresita (ar trebui decrementat), modificarea lui n in while e gresita, nu se adauga 2 la i, ci se decrementeaza i cu 1)
+*   3.2 4 (Logica incorectă, nu tratează corect cazul în care `a[i][j]` este deja mai mare decât vecinii. Returnează 0 incorect. Lipsesc initializarile matricelor dx si dy.)
+*   3.3.a 2
+*   3.3.b 8 (Soluție corectă)

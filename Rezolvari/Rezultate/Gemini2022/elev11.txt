@@ -1,0 +1,17 @@
+Iată evaluarea rezolvării elevului, cu punctajul aferent fiecărui item:
+
+*   **1.1:** Corect. Punctaj: 4
+*   **1.2:** Corect. Punctaj: 4
+*   **1.3:** Corect. Punctaj: 4
+*   **1.4:** Greșit. Punctaj: 0
+*   **1.5:** Corect. Punctaj: 4
+*   **2.1.a:** Corect. Punctaj: 6
+*   **2.1.b:** Corect. Punctaj: 6
+*   **2.1.c:** Corect. Punctaj: 10
+*   **2.1.d:** Corect. Punctaj: 6
+*   **2.2:** Corect. Punctaj: 6
+*   **2.3:** Corect. Punctaj: 6
+*   **3.1:** Incorect. Punctaj: 0
+*   **3.2:** Corect. Punctaj: 10
+*   **3.3.a:** Corect. Punctaj: 2
+*   **3.3.b:** Corect. Punctaj: 8

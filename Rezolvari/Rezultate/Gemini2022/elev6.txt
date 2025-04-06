@@ -1,0 +1,22 @@
+Iată punctajul pentru rezolvarea elevului, cu observații pentru întrebările cu grilă:
+
+*   **1.1** Gresit (Raspunsul corect este b)
+    ITEM 1.1 PUNCTAJ POSIBIL 0
+*   **1.2** Corect
+    ITEM 1.2 PUNCTAJ POSIBIL 4
+*   **1.3** Corect
+    ITEM 1.3 PUNCTAJ POSIBIL 4
+*   **1.4** Corect
+    ITEM 1.4 PUNCTAJ POSIBIL 4
+*   **1.5** Gresit (Raspunsul corect este a)
+    ITEM 1.5 PUNCTAJ POSIBIL 0
+*   **2.1.a** 6
+*   **2.1.b** 6
+*   **2.1.c** 10
+*   **2.1.d** 6
+*   **2.2** 0 (Nu afiseaza valorile cerute)
+*   **2.3** 0 (gresit)
+*   **3.1** 10
+*   **3.2** 3 (initializeaza matricea cu 10, dar nu returneaza nici o valoare. Algoritmul este incomplet, se acorda 3 puncte pentru structura)
+*   **3.3.a** 1 (explica partial eficienta)
+*   **3.3.b** 8
